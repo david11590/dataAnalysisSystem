@@ -30,5 +30,10 @@ Você pode executar a classe DataAnalysisSystemApplication em sua IDE de prefere
 com comando "java -jar app.name.jar" ou ainda rodar o arquivo gradlew.bat para o windows. ou ainda via gradle 
 "gradle init --type java-application:".
 
+# Testes
+Para rodar os testes é importante que não tenha nem um outro arquivo.dat no diretorio de entrada, pois ele roda a aplicação completa,
+ou seja ele cria o arquivo e a aplicação ira buscar 1 arquivo ".dat", para não ter risco de pegar o errado.
+Todos os arquivos de teste são criados e apagados ao final da execuçao(apenas os de teste).
+
 
 
