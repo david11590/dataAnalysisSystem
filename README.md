@@ -1,7 +1,7 @@
 # dataAnalysisSystem
  Project related to the challenge proposed by DBC Company to select Agibank
 
-#Arquitetura
+# Arquitetura
 A aplicação foi desenvolvida baseada em Spring boot e Java 8,o gerenciamento de dependencias esta a cargo do Gradle. 
 É utilizado padrão Singleton, principalmente para classes auxiliares. O codigo esta com o de propriedades YAML e enum's.
 A classe Application não esta na raiz, ela tem um pacote proprio e o mapeamento dos componetes esta sendo feito nela
@@ -13,7 +13,7 @@ da clase que sera utilizada no processamento, sendo somada ao pacote de reflexã
 de execução e convertida a Interface que a classe Implementa, utilizando a propria para executar o processamento 
 da linha.
 
-#Funcionamento
+# Funcionamento
 Conforme desafio, a aplicação processa arquivos com extensão ".dat" em um diretorio predeterminado(configurado no 
 arquivo YALM), sendo processado e gerando um arquivo de mesmo nome em um diretorio de saida(tambem configurado no 
 arquivo YALM) de final ".done.dat".
@@ -25,7 +25,7 @@ Tanto o diretorio de entrada de arquivos e o de saida(%HOMEPATH%/data/out) são 
 caso não existam, o mesmo ocorre nos testes.
 
 
-#Rodando aplicação
+# Rodando aplicação
 Você pode executar a classe DataAnalysisSystemApplication em sua IDE de preferencia ou compilar via gradle e rodar o jar 
 com comando "java -jar app.name.jar" ou ainda rodar o arquivo gradlew.bat para o windows. ou ainda via gradle 
 "gradle init --type java-application:".
