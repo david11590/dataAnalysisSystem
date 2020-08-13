@@ -1,0 +1,25 @@
+cron:
+    expression:
+        second: "* * * * * *"
+
+hierarchy:
+    reading:
+        directory: >
+            HOMEPATH,
+            data,
+            in
+    done:
+        directory: >
+            HOMEPATH,
+            data,
+            out
+
+file:
+    reading:
+        extension: ".dat"
+    done:
+        extension: ".done.dat"
+
+reflection:
+    package: "br.com.dbccompany.agibank.data.analysis.system.reflection"
+
