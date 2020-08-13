@@ -1,16 +1,11 @@
 package br.com.dbccompany.agibank.data.analysis.system;
 
 import java.io.File;
-import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 
 public class DataAnalysisSystemApplicationTestsAux
 {
-    private Path pathInput;
-    private Path pathOutput;
-    private Path pathOutputTest;
-    private Path pathInputTest;
     private int count;
     private static DataAnalysisSystemApplicationTestsAux instance;
 
@@ -85,6 +80,7 @@ public class DataAnalysisSystemApplicationTestsAux
     public String StringFormatOutputPathTest()
     {
         return "src/test/resources/arquivoTest.done.dat";
+
     }
     public String StringFormatInputPathProcess(List<String> hierarchyFile)
     {

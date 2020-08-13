@@ -1,9 +1,6 @@
 package br.com.dbccompany.agibank.data.analysis.system.dto;
 
-import br.com.dbccompany.agibank.data.analysis.system.util.StringFormatEnum;
-
 import java.util.*;
-
 import static java.lang.String.valueOf;
 
 public class OutputFile

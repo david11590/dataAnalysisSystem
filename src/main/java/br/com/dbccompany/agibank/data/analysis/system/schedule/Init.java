@@ -14,7 +14,7 @@ public class Init
 
     @Scheduled(cron = "${cron.expression.second}")
     public void execScheduleBatch()
-            throws InterruptedException, IOException
+            throws IOException
     {
         ProcessFileService.execution();
     }

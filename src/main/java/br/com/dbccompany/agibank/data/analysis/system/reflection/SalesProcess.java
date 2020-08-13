@@ -13,21 +13,65 @@ public class SalesProcess implements ReflectionBase {
     @Override
     public void execution(String line)
     {
-        SalesProcessAux.getInstance().setIdxInitial();
-        SalesProcessAux.getInstance().setValueAllSales(FilePositionEnum.VALUE_INITIAL_SALES.value());
-        SalesProcessAux.getInstance().setNameSalesman(Stream.of(line.split(FileLineDelimiterEnum.DELIMITER_LINE.value())).collect(Collectors.toList()).get(FilePositionEnum.POSITION_SALESMAN_NAME_IN_SALES.value()));
-        SalesProcessAux.getInstance().setIdSale(Stream.of(line.split(FileLineDelimiterEnum.DELIMITER_LINE.value())).collect(Collectors.toList()).get(FilePositionEnum.POSITION_ID_SALES.value()));
+        SalesProcessAux
+                .getInstance()
+                .setIdxInitial();
+        SalesProcessAux
+                .getInstance()
+                .setValueAllSales(FilePositionEnum
+                        .VALUE_INITIAL_SALES
+                        .value());
+        SalesProcessAux
+                .getInstance()
+                .setNameSalesman(Stream
+                        .of(line.split(FileLineDelimiterEnum
+                                .DELIMITER_LINE
+                                .value()))
+                        .collect(Collectors
+                                .toList())
+                        .get(FilePositionEnum
+                                .POSITION_SALESMAN_NAME_IN_SALES
+                                .value()));
+        SalesProcessAux
+                .getInstance()
+                .setIdSale(Stream
+                        .of(line.split(FileLineDelimiterEnum
+                                .DELIMITER_LINE
+                                .value()))
+                        .collect(Collectors
+                                .toList())
+                        .get(FilePositionEnum.POSITION_ID_SALES.value()));
 
         Stream
-          .of(line.split(FileLineDelimiterEnum.DELIMITER_LINE.value()))
-          .collect(Collectors.toList())
+          .of(line.split(FileLineDelimiterEnum
+                  .DELIMITER_LINE
+                  .value()))
+          .collect(Collectors
+                  .toList())
           .forEach(E ->
         {
-            if(E.contains(FileLineDelimiterEnum.DELIMITER_SALES_FIRST.value()))
-               Stream.of(E.split(FileLineDelimiterEnum.DELIMITER_SALE.value()))
-                        .collect(Collectors.toList())
-                        .forEach(I -> Stream.of(I.split(FileLineDelimiterEnum.DELIMITER_SALES.value()))
-                                .forEach(L -> valueAllSalesCount(Double.parseDouble(L.replaceAll(FileLineDelimiterEnum.DELIMITER_SALES_FIRST_END_RE.value(), FileLineDelimiterEnum.STRING_CLEAN.value())))));
+            if(E
+                    .contains(FileLineDelimiterEnum
+                            .DELIMITER_SALES_FIRST
+                            .value()))
+               Stream
+                       .of(E
+                               .split(FileLineDelimiterEnum
+                                       .DELIMITER_SALE
+                                       .value()))
+                        .collect(Collectors
+                                .toList())
+                        .forEach(I -> Stream
+                                .of(I.split(FileLineDelimiterEnum
+                                        .DELIMITER_SALES
+                                        .value()))
+                                .forEach(L -> valueAllSalesCount(Double
+                                        .parseDouble(L
+                                                .replaceAll(FileLineDelimiterEnum
+                                                        .DELIMITER_SALES_FIRST_END_RE
+                                                        .value(), FileLineDelimiterEnum
+                                                        .STRING_CLEAN
+                                                        .value())))));
         });
 
         ProcessFileServiceAux
@@ -44,12 +88,18 @@ public class SalesProcess implements ReflectionBase {
                 .getInstance()
                 .getOutputFile()
                 .getExpensiveSale()
-                .getValue() < SalesProcessAux.getInstance().getValueAllSales())
+                .getValue() < SalesProcessAux
+               .getInstance()
+               .getValueAllSales())
        {
            ProcessFileServiceAux
                    .getInstance()
                    .getOutputFile()
-                   .setExpensiveSale(new ExpensiveSale(SalesProcessAux.getInstance().getIdSale(),SalesProcessAux.getInstance().getValueAllSales()));
+                   .setExpensiveSale(new ExpensiveSale(SalesProcessAux
+                           .getInstance()
+                           .getIdSale(),SalesProcessAux
+                           .getInstance()
+                           .getValueAllSales()));
        }
     }
 

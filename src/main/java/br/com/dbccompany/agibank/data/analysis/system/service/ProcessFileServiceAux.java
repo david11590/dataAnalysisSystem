@@ -9,7 +9,6 @@ import br.com.dbccompany.agibank.data.analysis.system.reflection.ReflectionBase;
 import br.com.dbccompany.agibank.data.analysis.system.util.StringFormatEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import static br.com.dbccompany.agibank.data.analysis.system.reflection.ReflectionClassEnum.getClassReflectionMap;
 import static java.lang.Class.forName;
 import static java.lang.String.format;
@@ -39,8 +38,23 @@ public class ProcessFileServiceAux
     }
 
     public void processLine(String line,String reflectionPackage) {
-        try { reflectionBase = (ReflectionBase)  forName(format(StringFormatEnum.STRING_PACKAGE_REFLECTION.value(), reflectionPackage, getClassReflectionMap().get(line.split(FileLineDelimiterEnum.DELIMITER_LINE.value())[FilePositionEnum.POSITION_ID_LINE.value()]))).newInstance(); }
-        catch (ClassNotFoundException|IllegalAccessException|InstantiationException e) { e.printStackTrace(); }
+        try {
+            reflectionBase = (ReflectionBase)  forName(format(StringFormatEnum
+                    .STRING_PACKAGE_REFLECTION
+                    .value(), reflectionPackage,
+                    getClassReflectionMap()
+                    .get(line
+                            .split(FileLineDelimiterEnum
+                                    .DELIMITER_LINE
+                                    .value())[FilePositionEnum
+                            .POSITION_ID_LINE
+                            .value()])))
+                    .newInstance();
+        }
+        catch (ClassNotFoundException|IllegalAccessException|InstantiationException e)
+        {
+            e.printStackTrace();
+        }
         reflectionBase.execution(line);
     }
 

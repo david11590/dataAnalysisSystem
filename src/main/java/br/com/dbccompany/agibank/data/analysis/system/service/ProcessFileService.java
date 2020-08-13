@@ -2,7 +2,8 @@ package br.com.dbccompany.agibank.data.analysis.system.service;
 
 import br.com.dbccompany.agibank.data.analysis.system.dto.OutputFile;
 import br.com.dbccompany.agibank.data.analysis.system.file.SearchFile;
-import br.com.dbccompany.agibank.data.analysis.system.reflection.ReflectionBase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import java.io.IOException;
